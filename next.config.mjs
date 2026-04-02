@@ -2,7 +2,8 @@
 const nextConfig = {
   /* config options here */
   images: {
-    domains: ["flipix.in", "flipix.in/admin/assets/images"],
+    domains: ["flipix.in", "flipix.in/admin/assets/images", "flipixpull.b-cdn.net"],
+    
   }
 };
 

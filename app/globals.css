@@ -1,15 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap");
-
 @import "tailwindcss";
 body {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)),
-    url('https://flipix.in/admin/assets/images/mjy11.jpg');
-    
+    url("../public/images/homebg.webp");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* add lenis */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
 }
 /* style script fonts */
 @font-face {
@@ -21,9 +29,53 @@ body {
 @theme {
   --font-poppins: "Poppins", sans-serif;
   --font-styleScript: "styleScript", cursive;
+  --color-yellow: #f4c720;
+  --color-gray-bg: #ffffff0f;
+  --color-border-color: #ffffff1f;
+  --color-gray-text: #888;
 }
 
 /* nav links class */
 .nav-link {
   @apply text-[14px] font-medium transition-all px-3 py-1 duration-300 hover:text-[#f4c720];
+}
+/* edit home page slider */
+.slick-track:before,
+.slick-track:after {
+  content: "";
+  display: table;
+}
+
+.carouselCardImg {
+  transition: all 0.4s ease-in-out;
+}
+.cardsParent:hover .carouselCardImg {
+  transform: scale(1.06);
+}
+.cardsChatBox {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+.cardsParent:hover .cardsChatBox {
+  opacity: 1;
+}
+.customShadow {
+  transition: all 0.4s ease-in-out;
+}
+.customShadow:hover {
+  box-shadow: 0 10px 20px #f4c6206b;
+}
+.gifShadow {
+  transition: all 0.4s ease-in-out;
+}
+.gifShadow:hover {
+  box-shadow: 0 0 30px #f4c62048;
+}
+.searchIconShadow {
+  box-shadow: 0 0 30px #f4c62048;
+}
+.searchIconShadow:hover {
+  box-shadow: 0 0 50px #f4c6208c;
 }

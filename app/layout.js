@@ -1,6 +1,7 @@
 import Canvas from "@/components/canvas/Canvas";
 import "./globals.css";
 import Navber from "@/components/navberFooter/Navber";
+import SmoothScroll from "@/components/lenis/SmoothScroll";
 
 export const metadata = {
   icons: {
@@ -9,11 +10,11 @@ export const metadata = {
   title: "FlipiX | Feeling Wali Filpbook",
   description: "Feeling Wali Filpbook",
 };
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={` h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className={` h-auto w-full antialiased`}>
+      <body className="">
+        <SmoothScroll/>
         <Canvas />
         <Navber/>
         {children}
