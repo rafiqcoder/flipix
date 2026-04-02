@@ -12,9 +12,9 @@ function Creator() {
           Monetize your photography with FlipiX
         </p>
       </div>
-      <div className="mt-5 gifShadow">
+      <div className="mt-5 w-fit mx-auto gifShadow">
         <Link href={"/creator"} >
-          <Image src={bannerGif} alt="bannerGif" width={""} height={""} />
+          <Image src={bannerGif} alt="bannerGif" className="mx-auto" width={1000} height={""} />
         </Link>
       </div>
     </div>

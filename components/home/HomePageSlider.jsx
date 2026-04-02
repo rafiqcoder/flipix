@@ -108,11 +108,11 @@ function HomePageSlider() {
       >
         <MdKeyboardArrowRight className=" md:text-xl text-lg font-bold lg:text-2xl " />
       </div>
-      <div className="flex px-5 flex-nowrap overflow-y-hidden py-5 gap-4 h-full w-full ">
+      <div className="flex px-3 md:px-5 flex-nowrap overflow-y-hidden py-5 gap-4 h-full w-full ">
         {partners.map((partner) => (
           <div
             className={`shrink-0 overflow-hidden cardsParent px-3  h-[270px] cursor-pointer transition duration-300 hover:-translate-y-2 hover:scale-[103%] bg-gray-bg rounded-xl border border-border-color 
-  ${partner.isPro ? "w-[60%] sm:w-[40%] customShadow md:w-[30%] lg:w-[20%] py-1" : "w-[50%] sm:w-[33.33%] py-3 md:w-[25%] lg:w-[16.66%]"}`}
+  ${partner.isPro ? "w-[70%] sm:w-[40%] customShadow md:w-[30%] lg:w-[20%] py-1" : "w-[60%] sm:w-[33.33%] py-3 md:w-[25%] lg:w-[16.66%]"}`}
             key={partner.id}
             style={{ transform: `translateX(-${slide * 100}%)` }}
           >

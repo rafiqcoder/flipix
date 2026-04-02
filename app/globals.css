@@ -79,3 +79,86 @@ html.lenis {
 .searchIconShadow:hover {
   box-shadow: 0 0 50px #f4c6208c;
 }
+
+/* about page css */
+.section-fade {
+  transform: translateY(120px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.section-fade.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gold-line::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin-top: 12px;
+}
+
+.card-hover {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 32px rgba(240, 165, 0, 0.12);
+}
+
+.nav-glow {
+  box-shadow: 0 1px 0 rgba(240, 165, 0, 0.15);
+}
+
+.hero-divider {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  height: 1px;
+  width: 100%;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #f0a500, #ffc93c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-card {
+  background: linear-gradient(135deg, #111 0%, #1a1500 100%);
+  border: 1px solid rgba(240, 165, 0, 0.25);
+}
+
+.link-gold {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.2s;
+}
+.link-gold:hover {
+  text-decoration-color: var(--gold);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.logo-shimmer {
+  background: linear-gradient(90deg, #fff 0%, #f0a500 40%, #fff 60%, #fff 100%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s ease infinite;
+}
