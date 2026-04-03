@@ -29,7 +29,7 @@ function ToggleNav() {
             Home
           </Link>
           <div
-            onMouseOver={() => setDropDown(true)}
+            onClick={() => setDropDown(!dropDown)}
             className="flex relative nav-link items-center cursor-default"
           >
             <p className="">More Info</p>
