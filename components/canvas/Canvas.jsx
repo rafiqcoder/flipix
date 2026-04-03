@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Canvas() {
   const canvasRef = useRef(null);
-
+  const [starCount, setStarCount] = useState(150);
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -17,15 +17,13 @@ export default function Canvas() {
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
-    const STAR_COUNT = 150;
-
-    const stars = Array.from({ length: STAR_COUNT }, () => ({
+    const stars = Array.from({ length: starCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       speed: Math.random() * 0.5 + 0.2,
       baseSize: Math.random() * 0.1 + 0.3,
       phase: Math.random() * Math.PI * 2,
-      twinkleSpeed: Math.random() * 0.05 + 0.02
+      twinkleSpeed: Math.random() * 0.05 + 0.02,
     }));
 
     function drawStars() {
@@ -72,6 +70,26 @@ export default function Canvas() {
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", resizeCanvas);
+    };
+  }, [starCount]);
+
+  // change start counts for better experience in mobile device
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1000) {
+        setStarCount(60);
+      }
+    };
+
+    // initial check
+    handleResize();
+
+    // add event listener
+    window.addEventListener("resize", handleResize);
+
+    // cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 

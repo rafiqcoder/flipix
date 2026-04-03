@@ -5,7 +5,7 @@ import logo from '@/public/images/logo.webp'
 import Link from "next/link";
 function page() {
   return (
-    <div className="min-h-screen max-w-4xl mx-auto font-poppins  text-white font-body">
+    <div className="min-h-screen max-w-6xl mx-auto font-poppins  text-white font-body">
       <div className=" md:px-4 px-3 lg:px-6 py-5 md:py-6 lg:py-8 text-center ">
         <div className="">
           <p className="text-xs tracking-[0.4em] uppercase text-[#888] mb-4 font-medium">
