@@ -40,36 +40,34 @@ function ToggleNav() {
               onMouseLeave={() => setDropDown(false)}
               className={`${dropDown ? "block" : "hidden"} absolute w-50 text-[#b3b3b3] bg-[#1a1a1a] border-t-2 font-medium border-[#f4c720] text-[14px] capitalize top-[120%] left-0`}
             >
-              <div
+              <Link href={"/about"} onClick={() => setOpenToggle(false)}>
+                <div className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]">
+                  About Us
+                </div>
+              </Link>
+              <Link href={"/condition"} onClick={() => setOpenToggle(false)}>
+                <div className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]">
+                  Tearms & Conditions
+                </div>
+              </Link>
+              <Link
                 onClick={() => setOpenToggle(false)}
-                className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]"
+                href={"/hyper-guideline"}
               >
-                <Link href={"/about"}>About Us</Link>
-              </div>
-              <div
-                onClick={() => setOpenToggle(false)}
-                className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]"
-              >
-                <Link href={"/condition"}>Tearms & Conditions</Link>
-              </div>
-              <div
-                onClick={() => setOpenToggle(false)}
-                className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]"
-              >
-                <Link href={"/hyper-guideline"}>Hyper Guidelines</Link>
-              </div>
-              <div
-                onClick={() => setOpenToggle(false)}
-                className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]"
-              >
-                <Link href={"/refund"}>Refund/Cancel Policy</Link>
-              </div>
-              <div
-                onClick={() => setOpenToggle(false)}
-                className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]"
-              >
-                <Link href={"/privacy"}>Privacy Policy</Link>
-              </div>
+                <div className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]">
+                  Hyper Guidelines
+                </div>
+              </Link>
+              <Link onClick={() => setOpenToggle(false)} href={"/refund"}>
+                <div className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]">
+                  Refund/Cancel Policy
+                </div>
+              </Link>
+              <Link href={"/privacy"} onClick={() => setOpenToggle(false)}>
+                <div className="border-b cursor-pointer transition duration-200 border-[#333] px-3 py-2.5 hover:text-[#f4c720] hover:bg-[#3b3b3b93]">
+                  Privacy Policy
+                </div>
+              </Link>
             </div>
           </div>
           <Link
@@ -118,7 +116,6 @@ function ToggleNav() {
       </nav>
       <div
         onClick={() => setOpenToggle(true)}
-
         className="text-2xl cursor-pointer font-medium text-white lg:hidden block"
       >
         <IoMenu />

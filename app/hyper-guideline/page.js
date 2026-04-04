@@ -2,9 +2,10 @@ import React from "react";
 import AnimatedSections from "./AnimatedSections";
 import Image from "next/image";
 import logo from "@/public/images/logo.webp";
+import Link from "next/link";
 export const metadata = {
-  title: "Flipix Terms & Conditions",
-  description: "Read the official Terms and Conditions of Flipix platform.",
+  title: "About Us",
+  description: "About Us",
 };
 function page() {
   return (
@@ -19,9 +20,10 @@ function page() {
             className="mx-auto mb-3 w-[170px] "
           />
           <h1 className="font-display text-5xl md:text-7xl tracking-widest mb-3">
-            <span className="text-gradient">FLIPIX</span> TERMS AND CONDITIONS
+            <span className="text-gradient">FLIPIX</span> HYPER PROGRAM
           </h1>
           <div className="hero-divider max-w-xs mx-auto" />
+          <p className=" font-medium text-[17px] mt-3">Terms and Conditions for Printing Labs</p>
         </div>
       </div>
       <AnimatedSections />
@@ -32,6 +34,20 @@ function page() {
           <p className="text-[#555] text-xs tracking-wider">
             © 2026 Flipix. All Rights Reserved.
           </p>
+          <div className="flex gap-6 text-xs text-[#555] tracking-wide uppercase">
+            <Link
+              href="/privacy"
+              className="hover:text-[#f0a500] transition-colors"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/tearms"
+              className="hover:text-[#f0a500] transition-colors"
+            >
+              Terms
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
