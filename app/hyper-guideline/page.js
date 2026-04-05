@@ -4,8 +4,8 @@ import Image from "next/image";
 import logo from "@/public/images/logo.webp";
 import Link from "next/link";
 export const metadata = {
-  title: "About Us",
-  description: "About Us",
+  title: "Hyper Guideline",
+  description: "Hyper Guideline",
 };
 function page() {
   return (
@@ -23,14 +23,25 @@ function page() {
             <span className="text-gradient">FLIPIX</span> HYPER PROGRAM
           </h1>
           <div className="hero-divider max-w-xs mx-auto" />
-          <p className=" font-medium text-[17px] mt-3">Terms and Conditions for Printing Labs</p>
+          <p className=" font-medium text-[17px] mt-3">
+            Terms and Conditions for Printing Labs
+          </p>
         </div>
       </div>
       <AnimatedSections />
+
+      <div className="px-6 py-8 bg-[#ffd7001a] mt-5 mb-5 text-[16px] font-semibold text-[#FFD700] rounded-md">
+        By proceeding with the registration, you acknowledge and agree to the
+        above terms.
+      </div>
       {/* Footer */}
       <footer className="border-t border-[rgba(240,165,0,0.12)] py-12 text-center px-6">
+        <p className="text-[#555] text-xs tracking-wider mb-3">
+          For any queries, please contact our support team.{" "}
+        </p>
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <Image src={logo} alt="logo" width={100} height={300} />
+
           <p className="text-[#555] text-xs tracking-wider">
             © 2026 Flipix. All Rights Reserved.
           </p>
