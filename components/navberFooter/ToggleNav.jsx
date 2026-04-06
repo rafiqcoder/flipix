@@ -80,7 +80,7 @@ function ToggleNav() {
 
           <Link
             onClick={() => setOpenToggle(false)}
-            href={"/price"}
+            href={"/pricing"}
             className="nav-link"
           >
             Price

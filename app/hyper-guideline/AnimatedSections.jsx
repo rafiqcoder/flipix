@@ -29,8 +29,6 @@ export default function AnimatedSections() {
     if (el) sectionsRef.current[index] = el;
   };
 
-
-
   return (
     <div className="w-full">
       {/* Main Content */}
@@ -53,14 +51,14 @@ export default function AnimatedSections() {
           <div className="md:mt-3 mt-2 lg:mt-5 space-y-2">
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed text-[14px] md:text-[15px] md:text-base">
                 The printing lab must strictly follow all rules, policies, and
                 operational guidelines provided by Flipix India.
               </p>
             </div>
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed text-[14px] md:text-[15px] md:text-base">
                 Any violation of Flipix's policies will lead to account
                 suspension or permanent deletion.
               </p>
@@ -73,28 +71,28 @@ export default function AnimatedSections() {
           <h2 className="font-semibold text-2xl md:text-3xl lg:text-4xl text-[#f0a500] gold-line">
             2. Account Suspension & Termination
           </h2>
-          <p className="text-[#ccc] leading-relaxed md:mt-3 mt-2 lg:mt-5  text-[14px] md:text-[15px]">
+          <p className="text-[#ccc] leading-relaxed md:mt-3 mt-2 lg:mt-5 font-semibold text-[14px] md:text-[16px]">
             Flipix India reserves the right to temporarily or permanently delete
             an account under the following circumstances:
           </p>
           <div className="md:mt-2 mt-1 lg:mt-3 space-y-2">
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 If the printing lab fails to comply with Flipix India's rules
                 and regulations.
               </p>
             </div>
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 If incorrect, false, or misleading information/documents are
                 provided during registration.
               </p>
             </div>
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 If Flipix India services are not available in a specific region
                 (e.g., Bihar) but the printing lab uses a false address to gain
                 access.
@@ -102,7 +100,7 @@ export default function AnimatedSections() {
             </div>
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 If the printing lab is found to be using Flipix services in an
                 unauthorized or fraudulent manner.
               </p>
@@ -119,14 +117,17 @@ export default function AnimatedSections() {
           <div className="md:mt-3 mt-2 lg:mt-5 space-y-2">
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 If an account is suspended or terminated due to policy
-                violations, any recharge amount will not be refunded.
+                violations,{" "}
+                <span className="text-[15px] md:text-[17px] lg:text-lg font-semibold text-[#f0a500]">
+                  any recharge amount will not be refunded.
+                </span>
               </p>
             </div>
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 Flipix India holds the full right to deny refunds in case of
                 misuse, policy breach, or fraudulent activity.
               </p>
@@ -143,14 +144,14 @@ export default function AnimatedSections() {
           <div className="md:mt-3 mt-2 lg:mt-5 space-y-2">
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 Flipix India will conduct regular verification and KYC checks to
                 ensure compliance.
               </p>
             </div>
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 If required, physical officer visits may also be conducted for
                 further verification.
               </p>
@@ -167,7 +168,7 @@ export default function AnimatedSections() {
           <div className="md:mt-3 mt-2 lg:mt-5 space-y-2">
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 Flipix India holds full authority to take action against any
                 non-compliance and reserves the right to terminate access at its
                 sole discretion.
@@ -175,7 +176,7 @@ export default function AnimatedSections() {
             </div>
             <div className="flex items-center gap-3">
               <div className="px-1 py-1 rounded-full bg-[#ccc]"></div>
-              <p className="text-[#ccc] leading-relaxed font-semibold text-[15px] md:text-[16px]">
+              <p className="text-[#ccc] leading-relaxed font-medium text-[15px] md:text-[15px]">
                 The final decision regarding any disputes or policy violations
                 will be made by Flipix India, and the printing lab must accept
                 and adhere to it.
@@ -183,8 +184,6 @@ export default function AnimatedSections() {
             </div>
           </div>
         </div>
-
-        
       </main>
     </div>
   );

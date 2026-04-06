@@ -4,8 +4,8 @@ import Image from "next/image";
 import logo from "@/public/images/logo.webp";
 import Link from "next/link";
 export const metadata = {
-  title: "About Us",
-  description: "About Us",
+  title: "Flipix - Refund policy",
+  description: "Flipix refund policy",
 };
 function page() {
   return (
@@ -29,7 +29,9 @@ function page() {
       {/* Footer */}
       <footer className="border-t border-[rgba(240,165,0,0.12)] py-12 text-center px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <Image src={logo} alt="logo" width={100} height={300} />
+          <Link href={'/'}>
+            <Image src={logo} alt="logo" width={100} height={300} />
+          </Link>
           <p className="text-[#555] text-xs tracking-wider">
             © 2026 Flipix. All Rights Reserved.
           </p>

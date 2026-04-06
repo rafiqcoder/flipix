@@ -4,8 +4,8 @@ import Image from "next/image";
 import logo from "@/public/images/logo.webp";
 import Link from "next/link";
 export const metadata = {
-  title: "Hyper Guideline",
-  description: "Hyper Guideline",
+  title: "Flipix - Privacy Policy",
+  description: "Flipix Privacy Policy",
 };
 function page() {
   return (
@@ -20,20 +20,15 @@ function page() {
             className="mx-auto mb-3 w-[170px] "
           />
           <h1 className="font-display text-5xl md:text-7xl tracking-widest mb-3">
-            <span className="text-gradient">FLIPIX</span> HYPER PROGRAM
+            <span className="text-gradient">FLIPIX</span> PRIVACY POLICY
           </h1>
           <div className="hero-divider max-w-xs mx-auto" />
-          <p className=" font-medium text-[17px] mt-3">
-            Terms and Conditions for Printing Labs
-          </p>
+         
         </div>
       </div>
       <AnimatedSections />
 
-      <div className="px-6 py-8 bg-[#ffd7001a] mt-5 mb-5 text-[16px] font-semibold text-[#FFD700] rounded-md">
-        By proceeding with the registration, you acknowledge and agree to the
-        above terms.
-      </div>
+     
       {/* Footer */}
       <footer className="border-t border-[rgba(240,165,0,0.12)] py-12 text-center px-6">
         <p className="text-[#555] text-xs tracking-wider mb-3">
