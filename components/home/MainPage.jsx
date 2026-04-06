@@ -7,17 +7,15 @@ import HomePageSlider from "./HomePageSlider";
 import Creator from "./Creator";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaWandMagic } from "react-icons/fa6";
-
+import demoCollection from "@/public/images/demoCollection.webp";
 function MainPage() {
   return (
     <div className=" h-full w-full max-w-[1400px] mx-auto">
       <div className="w-full h-full md:pb-8 pb-6 lg:pb-12">
-        <div className="max-w-[350px] mx-auto bg-[#ffffff0d] border border-[#ffffff1a] rounded-3xl px-5 py-4 overflow-hidden">
+        <div className=" max-w-[300px] md:max-w-[350px] mx-auto bg-[#ffffff0d] border border-[#ffffff1a] rounded-3xl px-5 py-4 overflow-hidden">
           <Image
-            className=" rounded-3xl"
-            src={
-              "https://flipix.in/assets/images/rajawedsrani_41_15/001Coverfirst.jpg"
-            }
+            className=" rounded-3xl "
+            src={demoCollection}
             alt="img"
             width={420}
             height={400}
@@ -59,7 +57,6 @@ function MainPage() {
       </div>
       <div className="px-1.5 gifShadow cursor-pointer text-lg lg:text-[22px] z-30 py-1.5 fixed border transition duration-300 rounded-full border-[#f4c720] hover:bg-[#f4c720] hover:text-black md:left-6 left-4 text-[#f4c720] lg:left-8 md:bottom-8 bottom-5 lg:bottom-10">
         <FaWandMagic />
-
       </div>
     </div>
   );

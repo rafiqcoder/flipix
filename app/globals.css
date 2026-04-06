@@ -162,3 +162,24 @@ html.lenis {
   background-clip: text;
   animation: shimmer 4s ease infinite;
 }
+
+/* pricing section shadow */
+.pricingSection {
+  box-shadow: 0 10px 30px #f0a40028;
+}
+
+/* hide home page slider scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 1024px) {
+  .no-scrollbar::-webkit-scrollbar {
+    display: block;
+  }
+}

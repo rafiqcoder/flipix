@@ -2,21 +2,24 @@ import React from "react";
 import AnimatedSections from "./AnimatedSections";
 import Image from "next/image";
 import logo from "@/public/images/logo.webp";
-import Link from "next/link";
 export const metadata = {
-  title: "About Us",
-  description: "About Us",
+  title: "Flipix Terms & Conditions",
+  description: "Read the official Terms and Conditions of Flipix platform.",
 };
 function page() {
   return (
     <div className="min-h-screen max-w-6xl mx-auto font-poppins  text-white font-body">
       <div className=" md:px-4 px-3 lg:px-6 py-5 md:py-6 lg:py-8 text-center ">
         <div className="">
-          <p className="text-xs tracking-[0.4em] uppercase text-[#888] mb-4 font-medium">
-            Our Story
-          </p>
+          <Image
+            src={logo}
+            alt="logo"
+            width={200}
+            height={200}
+            className="mx-auto mb-3 w-[170px] "
+          />
           <h1 className="font-display text-5xl md:text-7xl tracking-widest mb-3">
-            ABOUT <span className="text-gradient">FLIPIX</span>
+            <span className="text-gradient">FLIPIX</span> TERMS AND CONDITIONS
           </h1>
           <div className="hero-divider max-w-xs mx-auto" />
         </div>
@@ -29,20 +32,6 @@ function page() {
           <p className="text-[#555] text-xs tracking-wider">
             © 2026 Flipix. All Rights Reserved.
           </p>
-          <div className="flex gap-6 text-xs text-[#555] tracking-wide uppercase">
-            <Link
-              href="/privacy"
-              className="hover:text-[#f0a500] transition-colors"
-            >
-              Privacy
-            </Link>
-            <Link
-              href="/tearms"
-              className="hover:text-[#f0a500] transition-colors"
-            >
-              Terms
-            </Link>
-          </div>
         </div>
       </footer>
     </div>
