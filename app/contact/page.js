@@ -2,7 +2,10 @@
 import { CiPhone, CiMail } from "react-icons/ci";
 import { IoLocationOutline } from "react-icons/io5";
 import Form from "./Form";
-
+export const metadata = {
+  title: "Contact Form",
+  description: "contact form",
+};
 export default function page() {
   const contactInfo = [
     {

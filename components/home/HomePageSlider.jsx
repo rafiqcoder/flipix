@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Card from "../common/Cards";
 import { BsFillStarFill } from "react-icons/bs";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
@@ -57,41 +57,63 @@ function HomePageSlider() {
         "https://api.whatsapp.com/send?phone=917530967320&text=Hi%20%F0%9F%91%8B%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20Maine%20apka%20ad%20*FlipiX%20India*%20par%20dekha%20aur%20mai%20apke%20printing%2Fdesigning%20service%20ke%20bare%20mai%20janna%20chahta%20hoon!",
       isPro: false,
     },
+   
   ];
-  // carousel functionality
-  const [slide, setSlide] = useState(0);
-  const [startCarousel, setStartCausel] = useState(false);
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (window.innerWidth < 1100) {
-        setStartCausel(true);
-      }
-    });
-  }, []);
-  useEffect(() => {
-    if (partners.length > 8) {
-      setStartCausel(true);
-    }
-  }, [partners]);
-  const prevItem = () => {
-    if (startCarousel) {
-      if (slide > 0) {
-        setSlide(slide - 1);
-      } else {
-        setSlide(partners.length - 1);
-      }
-      console.log(slide);
-    }
-  };
+
+  // useEffect(() => {
+  //   window.addEventListener("resize", () => {
+  //     if (window.innerWidth < 1100) {
+  //       setStartCausel(true);
+  //     }
+  //   });
+  // }, []);
+  // useEffect(() => {
+  //   if (partners.length > 8) {
+  //     setStartCausel(true);
+  //   }
+  // }, [partners]);
+  // const prevItem = () => {
+  //   if (startCarousel) {
+  //     if (slide > 0) {
+  //       setSlide(slide - 1);
+  //     } else {
+  //       setSlide(partners.length - 1);
+  //     }
+  //     console.log(slide);
+  //   }
+  // };
+  // const nextItem = () => {
+  //   if (startCarousel) {
+  //     if (slide < partners.length - 1) {
+  //       setSlide(slide + 1);
+  //     } else {
+  //       setSlide(0);
+  //     }
+  //     console.log(slide);
+  //   }
+  // };
+  const scrollParentRef = useRef(null);
   const nextItem = () => {
-    if (startCarousel) {
-      if (slide < partners.length - 1) {
-        setSlide(slide + 1);
-      } else {
-        setSlide(0);
-      }
-      console.log(slide);
+    const {clientWidth, scrollLeft, scrollWidth} = scrollParentRef.current;
+    if(clientWidth + scrollLeft >= scrollWidth - 1){
+      scrollParentRef.current.scrollLeft = 0;
+      return;
     }
+    scrollParentRef.current.scrollBy({
+      left: 200,
+      behavior: "smooth",
+    });
+  };
+
+  const prevItem = () => {
+    if(scrollParentRef.current.scrollLeft === 0){
+      scrollParentRef.current.scrollLeft = scrollParentRef.current.scrollWidth
+      return;
+    }
+    scrollParentRef.current.scrollBy({
+      left: -200,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -108,13 +130,15 @@ function HomePageSlider() {
       >
         <MdKeyboardArrowRight className=" md:text-xl text-lg font-bold lg:text-2xl " />
       </div>
-      <div className="flex px-3 md:px-5 flex-nowrap overflow-y-hidden py-5 gap-4 h-full w-full ">
+      <div
+        ref={scrollParentRef}
+        className="flex px-3 no-scrollbar transition-all duration-300 md:px-5 flex-nowrap overflow-y-hidden py-5 gap-4 h-full w-full "
+      >
         {partners.map((partner) => (
           <div
-            className={`shrink-0 overflow-hidden cardsParent px-3  h-[270px] cursor-pointer transition duration-300 hover:-translate-y-2 hover:scale-[103%] bg-gray-bg rounded-xl border border-border-color 
+            className={`shrink-0  relative overflow-hidden cardsParent px-3  h-[270px] cursor-pointer transition duration-300 hover:-translate-y-2 hover:scale-[103%] bg-gray-bg rounded-xl border border-border-color 
   ${partner.isPro ? "w-[70%] sm:w-[40%] customShadow md:w-[30%] lg:w-[20%] py-1" : "w-[60%] sm:w-[33.33%] py-3 md:w-[25%] lg:w-[16.66%]"}`}
             key={partner.id}
-            style={{ transform: `translateX(-${slide * 100}%)` }}
           >
             {partner.isPro && (
               <div className="px-1 pb-1 w-full  flex items-center justify-end">
