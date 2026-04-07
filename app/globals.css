@@ -33,6 +33,7 @@ html.lenis {
   --color-gray-bg: #ffffff0f;
   --color-border-color: #ffffff1f;
   --color-gray-text: #888;
+  --shadow-inputsShadows: 0 0 8px #f0a4008c;
 }
 
 /* nav links class */
@@ -182,4 +183,28 @@ html.lenis {
   .no-scrollbar::-webkit-scrollbar {
     display: block;
   }
+}
+
+/* login page background */
+.customBgLoginPage {
+  background: radial-gradient(
+    ellipse at 30% 50%,
+    rgba(244, 199, 32, 0.05) 0%,
+    transparent 60%
+  );
+}
+
+/* login page bg */
+.customBg {
+  background-image: url(../public/images/signin.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.overlayDiv {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
 }
