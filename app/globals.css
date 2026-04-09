@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap");
 @import "tailwindcss";
 body {
   width: 100%;
@@ -34,6 +35,7 @@ html.lenis {
   --color-border-color: #ffffff1f;
   --color-gray-text: #888;
   --shadow-inputsShadows: 0 0 8px #f0a4008c;
+  --font-cinzel: "Cinzel", serif;
 }
 
 /* nav links class */
@@ -207,4 +209,13 @@ html.lenis {
     rgba(0, 0, 0, 0.6) 0%,
     rgba(0, 0, 0, 0.3) 100%
   );
+}
+
+/* register cards border */
+.registerCardsBorder {
+  background: linear-gradient(90deg, transparent, #f4c720, transparent);
+}
+/* register page bg */
+.registerPageBg{
+  background-image: radial-gradient(ellipse at 25% 60%, rgba(244, 199, 32, 0.05) 0%, transparent 55%), radial-gradient(ellipse at 75% 30%, rgba(244, 199, 32, 0.04) 0%, transparent 50%);
 }

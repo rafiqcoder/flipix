@@ -85,7 +85,10 @@ function Form() {
           </div>
           <div className="text-[#555] text-[13.5px] gap-0.5 mt-2 flex items-center justify-center">
             Don't have an account?
-            <Link className="text-[#f0a500]" href={"/register"}> Register</Link>
+            <Link className="text-[#f0a500]" href={"/register"}>
+              {" "}
+              Register
+            </Link>
           </div>
         </div>
       </div>

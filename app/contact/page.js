@@ -1,4 +1,3 @@
-"use client";
 import { CiPhone, CiMail } from "react-icons/ci";
 import { IoLocationOutline } from "react-icons/io5";
 import Form from "./Form";
