@@ -74,25 +74,30 @@ function page() {
     },
   ];
   return (
-    <div className=" font-poppins">
-      <div className="flex flex-col items-center justify-center md:py-6 lg:py-8 xl:py-16 px-4 ">
-        <div className="text-center md:mb-6 sm:mb-4 mb-3 lg:mb-8">
-          <p className="text-base md:text-xl lg:text-2xl font-medium text-white mb-2 mt-3 lg:mt-0">
-            Our Pricing & Plans
-          </p>
-          <p className="text-[#ccc] leading-relaxed text-[14px] md:text-[15px] md:text-base">
-            This Plan is for Creating Flipix, 1 Credit is Used When You Create 1
-            Flipix Album.
-          </p>
-          <p className="text-[#ccc] leading-relaxed text-[14px] md:text-[15px] md:text-base">
-            After Plan is Expired, You can't Create or View Flipix.
-          </p>
-          <h1 className="mt-3 md:text-4xl sm:w-3xl text-2xl lg:text-5xl font-medium text-[#f0a500] tracking-tighter">
-            Studio version (for Photographers only)
-          </h1>
+    <div className=" font-poppins max-w-5xl mx-auto">
+      <div className="flex flex-col items-center justify-center md:py-6 lg:py-8 xl:py-16 px-4 relative">
+        <Link href={"/hyper-price-plan"} className=" absolute top-7 right-4 rounded-md font-medium text-[15px] text-white bg-green-600">
+          <Button className={' cursor-pointer capitalize'}>View Lab Pricing</Button>
+        </Link>
+        <div className="text-center flex justify-between md:mb-6 sm:mb-4 mb-3 lg:mb-8">
+          <div>
+            <p className="text-base md:text-xl lg:text-2xl font-medium text-white mb-2 mt-3 lg:mt-0">
+              Our Pricing & Plans
+            </p>
+            <p className="text-[#ccc] leading-relaxed text-[14px] md:text-[15px] md:text-base">
+              This Plan is for Creating Flipix, 1 Credit is Used When You Create
+              1 Flipix Album.
+            </p>
+            <p className="text-[#ccc] leading-relaxed text-[14px] md:text-[15px] md:text-base">
+              After Plan is Expired, You can't Create or View Flipix.
+            </p>
+            <h1 className="mt-3 md:text-4xl sm:w-3xl text-2xl lg:text-5xl font-medium text-[#f0a500] tracking-tighter">
+              Studio version (for Photographers only)
+            </h1>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-6xl w-full justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full justify-center relative">
           {/* Starter Card */}
 
           {pricingPlans.map(
@@ -100,7 +105,7 @@ function page() {
               return (
                 <div
                   key={id}
-                  className={`${title === "PROFESSIONAL" ? "border-[#f0a40085]" : "border-gray-900"} bg-[#000000a6] border  rounded-xl px-8 pt-5 pb-5 w-full flex flex-col`}
+                  className={`${title === "PROFESSIONAL" ? "border-[#f0a40085]" : "border-gray-900"} bg-[#000000de] border  rounded-xl px-8 pt-5 pb-5 w-full flex flex-col`}
                 >
                   <div className="w-full flex  justify-between">
                     <div className="w-full">
@@ -109,7 +114,9 @@ function page() {
                         <span className="inline-block py-1.5 font-semibold text-3xl text-[#f0a500] ">
                           {title}
                         </span>
-                        <div className="px-2 py-1.5 rounded text-white bg-[#f0a500] text-[14px] font-semibold">
+                        <div
+                          className={`px-2 py-1.5 rounded text-white bg-[#f0a500] text-[14px] font-semibold`}
+                        >
                           {badge}
                         </div>
                       </div>

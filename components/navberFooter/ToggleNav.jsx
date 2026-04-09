@@ -87,7 +87,7 @@ function ToggleNav() {
           </Link>
           <Link
             onClick={() => setOpenToggle(false)}
-            href={"/"}
+            href={"/faq"}
             className="nav-link"
           >
             Faq
