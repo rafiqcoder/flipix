@@ -3,20 +3,28 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { useState, useEffect } from "react";
 import { Country, State, City } from "country-state-city";
 import Link from "next/link";
+import Button from "@/components/common/Button";
 export default function RegisterForm() {
+  // lab states
+  const [labType, setLabType] = useState("Printing Lab");
+
   // full form data state
   const [formData, setFormData] = useState({
     selectedCountry: "",
     selectedState: "",
     selectedCity: "",
-    name: "",
+    ownerName: "",
+    printingLabName: "",
+    machineModel: "",
+    albums: "",
+    GSTNumber: "",
     mobileNumber: "",
+    alternateNumber: "",
     email: "",
     fullAddress: "",
-    createdPin: "",
-    confirmPin: "",
+    pinNumber: "",
     pinCode: "",
-    studioName: "",
+    designLabName: "",
   });
 
   // locations states
@@ -46,7 +54,6 @@ export default function RegisterForm() {
     setAllCity(cities);
   }, [formData.selectedState]);
 
-  console.log(formData);
   return (
     <div className="min-h-screen md:py-8 py-4 lg:py-12 text-white font-poppins flex items-center justify-center px-2 lg:px-4">
       <div className="w-full max-w-xl  ">
@@ -73,6 +80,7 @@ export default function RegisterForm() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            
           }}
           className=" md:space-y-3 space-y-2 lg:space-y-5 bg-[#0d0d0d] border border-[#ffffff12] p-8 rounded-lg"
         >
@@ -83,12 +91,12 @@ export default function RegisterForm() {
             </label>
             <input
               onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
+                setFormData({ ...formData, ownerName: e.target.value })
               }
-              value={formData.name}
+              value={formData.ownerName}
               required
               type="text"
-              placeholder="Your full name"
+              placeholder="Owner's full name"
               className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
             />
             {/* <p className="text-xs text-red-500 mt-1">
@@ -96,31 +104,178 @@ export default function RegisterForm() {
             </p> */}
           </div>
 
-          {/* Studio Name */}
+          {/* lab type */}
           <div>
-            <label className="text-sm flex gap-2 text-[#b3b3b3]">
-              Studio Name <span className=" rounded-full text-yellow">*</span>
+            <label className="text-sm flex mb-1 gap-2 text-[#b3b3b3]">
+              Lab Type <span className=" rounded-full text-yellow">*</span>
             </label>
-            <input
-              onChange={(e) =>
-                setFormData({ ...formData, studioName: e.target.value })
-              }
-              value={formData.studioName}
-              required
-              type="text"
-              placeholder="Your studio name"
-              className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
-            />
-            {/* <p className="text-xs text-red-500 mt-1">
+            <div className="flex items-center text-center font-poppins rounded-lg border border-[#ffffff12] justify-between gap-1 px-1 py-1 bg-[#111111]">
+              <div
+                className={`w-[50%] cursor-pointer rounded-lg ${labType === "Printing Lab" ? "bg-yellow text-black" : "bg-transparent text-[#666666]"}`}
+                onClick={() => setLabType("Printing Lab")}
+              >
+                <div
+                  className={"capitalize font-semibold px-3 py-2.5 text-[13px]"}
+                >
+                  Printing Lab
+                </div>
+              </div>
+              <div
+                className={`w-[50%] cursor-pointer rounded-lg ${labType === "Designing Lab" ? "bg-yellow text-black" : "bg-transparent text-[#666666]"}`}
+                onClick={() => setLabType("Designing Lab")}
+              >
+                <div
+                  className={"capitalize font-semibold px-3 py-2.5 text-[13px]"}
+                >
+                  Designing Lab
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Printing lab name */}
+          {labType === "Printing Lab" ? (
+            <div>
+              <div className="mb-3">
+                <label className="text-sm flex gap-2 text-[#b3b3b3]">
+                  Printing Lab Name{" "}
+                  <span className=" rounded-full text-yellow">*</span>
+                </label>
+                <input
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      printingLabName: e.target.value,
+                    })
+                  }
+                  value={formData.printingLabName}
+                  required
+                  type="text"
+                  placeholder="Your printing lab name"
+                  className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
+                />
+                {/* <p className="text-xs text-red-500 mt-1">
               Only letters and spaces allowed
             </p> */}
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                <div className=" ">
+                  <label className="text-sm flex gap-2 text-[#b3b3b3]">
+                    Machine Model{" "}
+                    <span className=" rounded-full text-yellow">*</span>
+                  </label>
+                  <input
+                    onChange={(e) =>
+                      setFormData({ ...formData, machineModel: e.target.value })
+                    }
+                    value={formData.machineModel}
+                    required
+                    type="text"
+                    placeholder="e.g. Epson L1800"
+                    className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
+                  />
+                  {/* <p className="text-xs text-red-500 mt-1">
+              Only letters and spaces allowed
+            </p> */}
+                </div>
+                <div className="">
+                  <label className="text-sm flex gap-2 text-[#b3b3b3]">
+                    Albums/Day{" "}
+                    <span className=" rounded-full text-yellow">*</span>
+                  </label>
+                  <input
+                    onChange={(e) =>
+                      setFormData({ ...formData, albums: e.target.value })
+                    }
+                    value={formData.albums}
+                    required
+                    type="text"
+                    placeholder="e.g. 20"
+                    className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
+                  />
+                  {/* <p className="text-xs text-red-500 mt-1">
+              Only letters and spaces allowed
+            </p> */}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="">
+              <div className="mb-3">
+                <label className="text-sm flex gap-2 text-[#b3b3b3]">
+                  Designing Lab Name{" "}
+                  <span className=" rounded-full text-yellow">*</span>
+                </label>
+                <input
+                  onChange={(e) =>
+                    setFormData({ ...formData, designLabName: e.target.value })
+                  }
+                  value={formData.designLabName}
+                  required
+                  type="text"
+                  placeholder="Your designing lab name"
+                  className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
+                />
+                {/* <p className="text-xs text-red-500 mt-1">
+              Only letters and spaces allowed
+            </p> */}
+              </div>
+
+              <div className="w-full">
+                <div className="">
+                  <label className="text-sm flex gap-2 text-[#b3b3b3]">
+                    Albums/Day{" "}
+                    <span className=" rounded-full text-yellow">*</span>
+                  </label>
+                  <input
+                    onChange={(e) =>
+                      setFormData({ ...formData, albums: e.target.value })
+                    }
+                    value={formData.albums}
+                    required
+                    type="text"
+                    placeholder="e.g. 15"
+                    className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
+                  />
+                  {/* <p className="text-xs text-red-500 mt-1">
+              Only letters and spaces allowed
+            </p> */}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* gst number */}
+          <div className="flex gap-2">
+            <div className=" w-full">
+              <label className="text-sm flex gap-2 text-[#b3b3b3]">
+                GST Number <span className=" rounded-full text-yellow">*</span>
+              </label>
+              <input
+                onChange={(e) =>
+                  setFormData({ ...formData, GSTNumber: e.target.value })
+                }
+                value={formData.GSTNumber}
+                required
+                type="text"
+                min={15}
+                max={15}
+                pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[0-9]{1}[A-Z]{1}[0-9A-Z]{1}$"
+                placeholder="22AAAAA0000A1Z5"
+                className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
+              />
+              {/* <p className="text-xs text-red-500 mt-1">
+              Only letters and spaces allowed
+            </p> */}
+            </div>
           </div>
 
           {/* Mobile */}
           <div className="flex gap-2">
             <div className=" w-[75%]">
               <label className="text-sm flex gap-2 text-[#b3b3b3]">
-                Mobile number{" "}
+                Mobile Number{" "}
                 <span className=" rounded-full text-yellow">*</span>
               </label>
               <input
@@ -130,7 +285,7 @@ export default function RegisterForm() {
                 value={formData.mobileNumber}
                 required
                 type="tel"
-                placeholder="10 digit number"
+                placeholder="10-digit number"
                 className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
               />
               {/* <p className="text-xs text-red-500 mt-1">
@@ -143,6 +298,30 @@ export default function RegisterForm() {
             >
               Send OTP
             </button>
+          </div>
+
+          {/* alternate number */}
+          <div className="flex gap-2">
+            <div className=" w-full">
+              <label className="text-sm flex gap-2 text-[#b3b3b3]">
+                Alternate Number
+                <span className="text-[13px] font-light">(optional)</span>{" "}
+                <span className=" rounded-full text-yellow">*</span>
+              </label>
+              <input
+                onChange={(e) =>
+                  setFormData({ ...formData, alternateNumber: e.target.value })
+                }
+                value={formData.alternateNumber}
+                required
+                type="tel"
+                placeholder="10-digit alternate number"
+                className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
+              />
+              {/* <p className="text-xs text-red-500 mt-1">
+              Only letters and spaces allowed
+            </p> */}
+            </div>
           </div>
 
           {/* Email */}
@@ -314,7 +493,7 @@ export default function RegisterForm() {
               </p>
               <div className="h-[1px] w-[40%] bg-[#ffffff12]"></div>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className=" gap-3">
               <div>
                 <label className="text-sm flex gap-2 text-[#b3b3b3]">
                   Create 4-Digit PIN
@@ -322,28 +501,15 @@ export default function RegisterForm() {
                 </label>
                 <input
                   onChange={(e) =>
-                    setFormData({ ...formData, createdPin: e.target.value })
+                    setFormData({
+                      ...formData,
+                      pinNumber: e.target.value,
+                    })
                   }
-                  value={formData.createdPin}
+                  value={formData.pinNumber}
                   required
                   type="password"
-                  placeholder="* * * *"
-                  className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
-                />
-              </div>
-              <div>
-                <label className="text-sm flex gap-2 text-[#b3b3b3]">
-                  Confirm PIN
-                  <span className=" rounded-full text-yellow">*</span>
-                </label>
-                <input
-                  onChange={(e) =>
-                    setFormData({ ...formData, confirmPin: e.target.value })
-                  }
-                  value={formData.confirmPin}
-                  required
-                  type="password"
-                  placeholder="* * * *"
+                  placeholder="Always remember this"
                   className="bg-[#111] focus:shadow-inputsShadows font-light text-white rounded-lg px-3 text-[13px] tracking-wide mt-1 py-3 border border-[#ffffff12] focus:border-[#f0a500] outline-none w-full"
                 />
               </div>

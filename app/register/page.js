@@ -42,7 +42,7 @@ function page() {
             <Cards
               version={
                 <>
-                  <span className="text-[20px] lg:text-[24px]">L</span>tudio{" "}
+                  <span className="text-[20px] lg:text-[24px]">L</span>ab{" "}
                   <span className="text-[20px] lg:text-[24px]">v</span>ersion
                 </>
               }
