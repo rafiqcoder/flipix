@@ -216,6 +216,31 @@ html.lenis {
   background: linear-gradient(90deg, transparent, #f4c720, transparent);
 }
 /* register page bg */
-.registerPageBg{
-  background-image: radial-gradient(ellipse at 25% 60%, rgba(244, 199, 32, 0.05) 0%, transparent 55%), radial-gradient(ellipse at 75% 30%, rgba(244, 199, 32, 0.04) 0%, transparent 50%);
+.registerPageBg {
+  background-image:
+    radial-gradient(
+      ellipse at 25% 60%,
+      rgba(244, 199, 32, 0.05) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 75% 30%,
+      rgba(244, 199, 32, 0.04) 0%,
+      transparent 50%
+    );
+}
+
+/* charts css */
+.recharts-text {
+  color: #f4c720 !important;
+
+  font-size: 15px !important;
+}
+
+.recharts-legend-item{
+  font-size: 20px !important;
+}
+
+.recharts-legend-wrapper{
+  display: none !important;
 }
