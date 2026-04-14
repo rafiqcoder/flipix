@@ -23,7 +23,7 @@ export default async function AdminLayout({ children }) {
   //   }
 
   return (
-    <div className="px-1 md:px-3 lg:px-4 py-2 md:py-3 lg:py-4 w-full relative mx-auto flex gap-3">
+    <div className="px-1 md:px-3 lg:px-4 py-2 md:py-3 lg:py-4 w-full relative mx-auto flex gap-4 lg:gap-3">
       <LeftMenu />
       {children}
     </div>

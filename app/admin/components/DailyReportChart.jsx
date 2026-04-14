@@ -12,19 +12,19 @@ import { RechartsDevtools } from "@recharts/devtools";
 
 // #region Sample data
 const dailyData = [
-  { date: "Mon", admin: 2, album: 3 },
-  { date: "Tue", admin: 4, album: 5 },
-  { date: "Wed", admin: 3, album: 2 },
-  { date: "Thu", admin: 5, album: 6 },
-  { date: "Fri", admin: 2, album: 4 },
-  { date: "Sat", admin: 6, album: 7 },
-  { date: "Sun", admin: 4, album: 5 },
+  { date: "Mon", admin: 2, albums: 3 },
+  { date: "Tue", admin: 4, albums: 5 },
+  { date: "Wed", admin: 3, albums: 2 },
+  { date: "Thu", admin: 5, albums: 6 },
+  { date: "Fri", admin: 2, albums: 4 },
+  { date: "Sat", admin: 6, albums: 7 },
+  { date: "Sun", admin: 4, albums: 5 },
 ];
 // #endregion
 
 export default function DailyReportChart() {
   return (
-    <div className="  w-full font-poppins">
+    <div className="  w-full font-poppins ">
       <div className="flex items-center justify-center gap-3">
         <div className="flex items-center mb-4 gap-1 justify-center">
           <div className=" border-1 h-3 w-12 border-[#2fa084f1] bg-[#2fa08452]"></div>
@@ -39,7 +39,7 @@ export default function DailyReportChart() {
         style={{
           width: "100%",
           height: "100%",
-          maxHeight: "70vh",
+          maxHeight: "40vh",
           aspectRatio: 1.618,
         }}
         responsive
@@ -71,20 +71,20 @@ export default function DailyReportChart() {
         <Line
           type="monotone"
           dataKey="admin"
-          stroke="#5D1C6A"
+          stroke="#2FA084"
           strokeWidth={2.5}
           dot={{
-            fill: "#5D1C6A",
+            fill: "#2FA084",
           }}
           activeDot={{ r: 8, stroke: "var(--color-surface-base)" }}
         />
         <Line
           type="monotone"
-          dataKey="album"
-          stroke="#2FA084"
+          dataKey="albums"
+          stroke="#5D1C6A"
           strokeWidth={2}
           dot={{
-            fill: "#2FA084",
+            fill: "#5D1C6A",
           }}
           activeDot={{ stroke: "var(--color-surface-base)" }}
         />
@@ -92,7 +92,7 @@ export default function DailyReportChart() {
       </LineChart>
 
       <div className="text-center mt-2">
-        <h1 className="text-[25px] font-semibold text-[#BFC9D1]">Daily Reports</h1>
+        <h1 className=" md:text-[20px] text-lg lg:text-[25px] font-semibold text-[#BFC9D1]">Daily Reports</h1>
       </div>
     </div>
   );

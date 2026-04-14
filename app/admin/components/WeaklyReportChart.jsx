@@ -12,13 +12,13 @@ import { RechartsDevtools } from "@recharts/devtools";
 
 // #region Sample data
 const weeklyData = [
-  { date: "Week 1", admin: 10, album: 20 },
-  { date: "Week 2", admin: 15, album: 25 },
-  { date: "Week 3", admin: 12, album: 18 },
-  { date: "Week 4", admin: 20, album: 30 },
-  { date: "Week 5", admin: 18, album: 28 },
-  { date: "Week 6", admin: 22, album: 35 },
-  { date: "Week 7", admin: 25, album: 40 },
+  { date: "Week 1", admin: 10, albums: 20 },
+  { date: "Week 3", admin: 12, albums: 18 },
+  { date: "Week 4", admin: 20, albums: 30 },
+  { date: "Week 5", admin: 18, albums: 28 },
+  { date: "Week 6", admin: 22, albums: 35 },
+  { date: "Week 7", admin: 25, albums: 40 },
+  { date: "Week 2", admin: 15, albums: 25 },
 ];
 // #endregion
 
@@ -39,7 +39,7 @@ export default function WeaklyReportData() {
         style={{
           width: "100%",
           height: "100%",
-          maxHeight: "70vh",
+          maxHeight: "40vh",
           aspectRatio: 1.618,
         }}
         responsive
@@ -71,20 +71,20 @@ export default function WeaklyReportData() {
         <Line
           type="monotone"
           dataKey="admin"
-          stroke="#5D1C6A"
+          stroke="#2FA084"
           strokeWidth={2.5}
           dot={{
-            fill: "#5D1C6A",
+            fill: "#2FA084",
           }}
           activeDot={{ r: 8, stroke: "var(--color-surface-base)" }}
         />
         <Line
           type="monotone"
-          dataKey="album"
-          stroke="#2FA084"
+          dataKey="albums"
+          stroke="#5D1C6A"
           strokeWidth={2}
           dot={{
-            fill: "#2FA084",
+            fill: "#5D1C6A",
           }}
           activeDot={{ stroke: "var(--color-surface-base)" }}
         />
@@ -92,7 +92,9 @@ export default function WeaklyReportData() {
       </LineChart>
 
       <div className="text-center mt-2">
-        <h1 className="text-[25px] font-semibold text-[#BFC9D1]">Weakly Reports</h1>
+        <h1 className=" md:text-[20px] text-lg lg:text-[25px] font-semibold text-[#BFC9D1]">
+          Weakly Reports
+        </h1>
       </div>
     </div>
   );

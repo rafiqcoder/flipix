@@ -19,7 +19,10 @@ import {
   MdLogout,
 } from "react-icons/md";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleLeftMenuState } from "@/toolkit/slice";
 function LeftMenu() {
+  const dispatch = useDispatch();
   const sidebarMenu = [
     {
       name: "Dashboard",
@@ -80,15 +83,19 @@ function LeftMenu() {
   // left menu controlling
   const [openLeftMenu, setOpenLeftMenu] = useState(true);
   const [activeLink, setActiveLink] = useState("/dashboard");
+
+  // toggler state for good experienc
+  const toggleMenu = useSelector((state) => state.isToggleLeftMenu);
+  
   return (
     <div
-      className={` transition-all duration-300 ${openLeftMenu ? "w-[360px]" : "w-[60px] md:w-[90px]"} overflow-x-hidden`}
+      className={` transition-all transform lg:static fixed z-20 duration-300 ${openLeftMenu ? "lg:w-[360px]" : "lg:w-[100px]"} overflow-x-hidden`}
     >
       <div
-        className={`fixed transition-all duration-300 z-10 md:px-3 px-2 lg:px-4 pb-12 py-2 md:py-3 lg:py-4 bg-[#0d0d0d] font-poppins rounded-lg h-[88vh] overflow-x-hidden ${openLeftMenu ? "w-[290px]" : "w-[65px] md:w-[80px]"}`}
+        className={`fixed transition-all duration-300 transform ${toggleMenu ? "translate-x-0" : "-translate-x-[120%] lg:translate-x-0"}  z-10 md:px-3 px-2 lg:px-4 pb-12 py-2 md:py-3 lg:py-4 bg-[#0d0d0d] font-poppins rounded-lg h-[88vh] overflow-x-hidden ${openLeftMenu ? "lg:w-[290px]" : "lg:w-[80px]"}`}
       >
         <div
-          className={` md:px-2 px-1 lg:px-3 py-2 transition-all duration-300 ${openLeftMenu ? "" : "flex-col gap-5"} items-center flex justify-between`}
+          className={` md:px-2 px-1 lg:px-3 py-2 transition-all duration-300 ${openLeftMenu ? "" : "lg:flex-col lg:gap-4"} items-center flex justify-between`}
         >
           <Image
             src={flipixIcon}
@@ -98,7 +105,10 @@ function LeftMenu() {
             height={50}
           />
           <div
-            onClick={() => setOpenLeftMenu(!openLeftMenu)}
+            onClick={() => {
+              dispatch(toggleLeftMenuState(!toggleMenu))
+              setOpenLeftMenu(!openLeftMenu);
+            }}
             className={` bg-[#f4c720] transition-all duration-300 hover:text-white text-black px-1 hover:bg-black rounded-lg text-xl lg:text-2xl py-1 cursor-pointer`}
           >
             <MdKeyboardArrowLeft />
@@ -120,7 +130,7 @@ function LeftMenu() {
                       {icon}
                     </div>
                     <p
-                      className={` transition-all duration-500 shrink-0 ${openLeftMenu ? " opacity-100" : " opacity-0"}`}
+                      className={` transition-all duration-500 shrink-0 ${openLeftMenu ? " opacity-100" : " lg:opacity-0"}`}
                     >
                       {name}
                     </p>
