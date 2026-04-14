@@ -24,11 +24,22 @@ function page() {
           </div>
         </div>
 
-        <div className="grid mt-5 md:grid-cols-3 grid-cols-2 lg:grid-cols-4 items-center gap-3">
-          <div className="px-2 md:px-4 lg:px-6 md:py-4 py-2 lg:py-6 rounded-lg text-center bg-[#0d0d0d]">
-            <p className="text-[17px] font-medium text-gray-text">Total Agents</p>
-            <h3 className="text-white font-semibold text-2xl mt-4">2</h3>
-          </div>
+        <div className="grid mt-5 lg:grid-cols-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-center gap-3">
+          {cardsData.map(({ title, value }, idx) => {
+            return (
+              <div
+                key={idx}
+                className="px-4 md:px-6 lg:px-8 md:py-6 py-4 lg:py-8 rounded-lg text-center bg-[#0d0d0d]"
+              >
+                <p className="text-[17px] font-medium text-gray-text">
+                  {title}
+                </p>
+                <h3 className="text-white font-semibold text-2xl mt-4">
+                  {value}
+                </h3>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

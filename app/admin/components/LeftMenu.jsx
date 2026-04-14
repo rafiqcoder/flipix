@@ -21,8 +21,11 @@ import {
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleLeftMenuState } from "@/toolkit/slice";
+import { useParams } from "next/navigation";
 function LeftMenu() {
   const dispatch = useDispatch();
+  const location = useParams( )
+  console.log(location)
   const sidebarMenu = [
     {
       name: "Dashboard",

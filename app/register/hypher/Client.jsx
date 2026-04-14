@@ -3,7 +3,6 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { useState, useEffect } from "react";
 import { Country, State, City } from "country-state-city";
 import Link from "next/link";
-import Button from "@/components/common/Button";
 export default function RegisterForm() {
   // lab states
   const [labType, setLabType] = useState("Printing Lab");
