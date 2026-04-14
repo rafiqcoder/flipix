@@ -21,11 +21,11 @@ import {
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleLeftMenuState } from "@/toolkit/slice";
-import { useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 function LeftMenu() {
   const dispatch = useDispatch();
-  const location = useParams( )
-  console.log(location)
+  const location = usePathname()
+  console.log(location.split('/')[3])
   const sidebarMenu = [
     {
       name: "Dashboard",
@@ -127,7 +127,7 @@ function LeftMenu() {
                   className=" w-full"
                 >
                   <div
-                    className={`flex transition duration-300 font-medium hover:text-black text-[15px] lg:text-[17px] rounded-md items-center gap-3 lg:gap-5 px-3 py-2 cursor-pointer   ${activeLink === path ? "bg-[#f4c620bd] text-black" : "hover:bg-[#f4c620bd] text-white"}`}
+                    className={`flex transition duration-300 font-medium hover:text-black text-[15px] lg:text-[17px] rounded-md items-center gap-3 lg:gap-5 px-3 py-2 cursor-pointer   ${path.split('/')[1] === location.split('/')[3] ? "bg-[#f4c620bd] text-black" : "hover:bg-[#f4c620bd] text-white"}`}
                   >
                     <div className={`${openLeftMenu ? "text-lg" : "text-2xl"}`}>
                       {icon}
