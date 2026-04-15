@@ -6,6 +6,10 @@ import scanner from "@/public/images/scnner.png";
 import DataFilterByDate from "./components/DataFilterByDate";
 import FilteringInputs from "./components/FilteringInputs";
 import { AiFillEye } from "react-icons/ai";
+export const metadata = {
+  title: "Flipix - Photographers",
+  description: "Flipix photographer page",
+};
 function page() {
   const tableHeaders = [
     "Dealer/Agent",

@@ -5,6 +5,11 @@ import { CiStar } from "react-icons/ci";
 import scanner from "@/public/images/scnner.png";
 import DataFilterByDate from "./components/DataFilterByDate";
 import FilteringInputs from "./components/FilteringInputs";
+
+export const metadata = {
+  title: "All - Flipix",
+  description: "All - Flipix page",
+};
 function page() {
   const tableHeaders = [
     "Album",

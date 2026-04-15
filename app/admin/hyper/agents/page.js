@@ -8,7 +8,10 @@ import DataFilterByDate from "./components/DataFilterByDate";
 import FilteringInputs from "./components/FilteringInputs";
 import AddNewAgent from "./components/AddNewAgent";
 import CountTotalAgent from "./components/CountTotalAgent";
-
+export const metadata = {
+  title: "Flipix - Agents",
+  description: "Flipix age page",
+};
 function page() {
   const headers = [
     "Name",
@@ -24,9 +27,6 @@ function page() {
     "Active Plan",
     "Plan Expiry",
   ];
-  function countAgent(data) {
-    console.log(data);
-  }
 
   return (
     <div className=" w-full font-poppins">

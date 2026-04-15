@@ -3,7 +3,10 @@ import DailyReportChart from "../../components/DailyReportChart";
 import WeaklyReportData from "../../components/WeaklyReportChart";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import ToggleBtn from "../../components/ToggleBtn";
-
+export const metadata = {
+  title: "Admin - Dashboard",
+  description: "Admin - Dashboard page",
+};
 function page() {
   const cardsData = [
     { title: "Total Agents", value: 2 },
