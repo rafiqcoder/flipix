@@ -2,81 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { CiStar } from "react-icons/ci";
-function DataFilterByDate() {
-  const userData = [
-    {
-      album: "Image_1",
-      sheets: "23 S",
-      jobNo: "616397",
-      dealerAgent: "Gauri Design",
-      photographer: "Radha Rani Production",
-      client: "Ashutosh & Pinky",
-      designEditRating: 0,
-      photographyRating: 0,
-      views: 0,
-      created: "06/06/2026",
-    },
-    {
-      album: "Image_2",
-      sheets: "26 S",
-      jobNo: "616499",
-      dealerAgent: "Gauri Design",
-      photographer: "Radha Rani Production",
-      client: "Krishna & Sejal",
-      designEditRating: 0,
-      photographyRating: 0,
-      views: 0,
-      created: "06/03/2026",
-    },
-    {
-      album: "Image_3",
-      sheets: "26 S",
-      jobNo: "616392",
-      dealerAgent: "Gauri Design",
-      photographer: "Radha Rani Production",
-      client: "Saista & Asif",
-      designEditRating: 0,
-      photographyRating: 0,
-      views: 2,
-      created: "06/12/2026",
-    },
-    {
-      album: "Image_4",
-      sheets: "21 S",
-      jobNo: "6126391",
-      dealerAgent: "Gauri Design",
-      photographer: "Radha Rani Production",
-      client: "Asif & Sista",
-      designEditRating: 0,
-      photographyRating: 0,
-      views: 1,
-      created: "06/03/2026",
-    },
-    {
-      album: "Image_5",
-      sheets: "42 S",
-      jobNo: "616576",
-      dealerAgent: "Gauri Design",
-      photographer: "Sattyam Photography",
-      client: "Rahul & Swati",
-      designEditRating: 0,
-      photographyRating: 0,
-      views: 4,
-      created: "06/03/2026",
-    },
-    {
-      album: "Image_6",
-      sheets: "46 S",
-      jobNo: "616575",
-      dealerAgent: "Gauri Design",
-      photographer: "Sattyam Photography",
-      client: "Luvkush & usha",
-      designEditRating: 0,
-      photographyRating: 0,
-      views: 14,
-      created: "06/03/2026",
-    },
-  ];
+function DataFilterByDate({userData}) {
+  
   const filteringDate = useSelector((state) => state.filterAgentByDate);
   const [data, setData] = useState(userData);
   useEffect(() => {

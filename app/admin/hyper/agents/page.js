@@ -6,6 +6,8 @@ import scanner from "@/public/images/scnner.png";
 
 import DataFilterByDate from "./components/DataFilterByDate";
 import FilteringInputs from "./components/FilteringInputs";
+import AddNewAgent from "./components/AddNewAgent";
+import CountTotalAgent from "./components/CountTotalAgent";
 
 function page() {
   const headers = [
@@ -22,16 +24,16 @@ function page() {
     "Active Plan",
     "Plan Expiry",
   ];
-  
-  
+  function countAgent(data) {
+    console.log(data);
+  }
 
   return (
     <div className=" w-full font-poppins">
       <div className="flex w-full bg-[#634d00] md:py-3 py-2 lg:py-5 md:px-4 px-2 lg:px-6 rounded-t-md items-center flex-wrap justify-between gap-3">
-        <h1 className="text-white font-semibold text-xl uppercase">
-          All Flipix (21)
-        </h1>
-        <FilteringInputs/>
+        <CountTotalAgent />
+        <FilteringInputs />
+        <AddNewAgent />
         <div className=" bg-white px-1 py-1 rounded-md">
           <Image src={scanner} alt="scanner" width={30} height={60} />
         </div>
@@ -52,7 +54,7 @@ function page() {
               </tr>
             </thead>
 
-            <DataFilterByDate/>
+            <DataFilterByDate />
           </table>
         </div>
       </div>

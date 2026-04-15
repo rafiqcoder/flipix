@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
 import { IoShirtOutline } from "react-icons/io5";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { totalAgeCountState } from "@/toolkit/slice";
 function DataFilterByDate() {
+  const dispatch = useDispatch()
   const userData = [
     {
       name: "Islam Gauri",
@@ -79,6 +81,9 @@ function DataFilterByDate() {
       planExpiry: "17/10/2025",
     },
   ];
+  useEffect(() => {
+    dispatch(totalAgeCountState(userData.length));
+  }, [userData]);
   const filteringDate = useSelector((state) => state.filterAgentByDate);
   const [data, setData] = useState(userData);
   useEffect(() => {

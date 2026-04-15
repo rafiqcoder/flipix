@@ -19,7 +19,7 @@ function page() {
     "Created",
     "QR Code",
   ];
-  const allFlipix = [
+  const userData = [
     {
       album: "Image_1",
       sheets: "23 S",
@@ -30,7 +30,7 @@ function page() {
       designEditRating: 0,
       photographyRating: 0,
       views: 0,
-      created: "06/03/2026",
+      created: "06/06/2026",
     },
     {
       album: "Image_2",
@@ -54,7 +54,7 @@ function page() {
       designEditRating: 0,
       photographyRating: 0,
       views: 2,
-      created: "06/03/2026",
+      created: "06/12/2026",
     },
     {
       album: "Image_4",
@@ -93,12 +93,11 @@ function page() {
       created: "06/03/2026",
     },
   ];
-
   return (
     <div className=" w-full font-poppins">
       <div className="flex w-full bg-[#634d00] md:py-3 py-2 lg:py-5 md:px-4 px-2 lg:px-6 rounded-t-md items-center flex-wrap justify-between gap-3">
         <h1 className="text-white font-semibold text-xl uppercase">
-          All Flipix (21)
+          All Flipix ({userData.length})
         </h1>
        <FilteringInputs/>
         <div className=" bg-white px-1 py-1 rounded-md">
@@ -122,7 +121,7 @@ function page() {
             </thead>
 
             {/* Table Body */}
-            <DataFilterByDate/>
+            <DataFilterByDate userData={userData}/>
           </table>
         </div>
       </div>
