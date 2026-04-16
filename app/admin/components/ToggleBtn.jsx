@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 function ToggleBtn() {
   const dispatch = useDispatch();
   const toggleMenuValue =  useSelector(state => state.isToggleLeftMenu);
-  console.log(toggleMenuValue)
   return (
     <button onClick={() => dispatch(toggleLeftMenuState(!toggleMenuValue))} className=" lg:hidden block">
       <div

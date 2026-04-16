@@ -25,7 +25,6 @@ import { usePathname } from "next/navigation";
 function LeftMenu() {
   const dispatch = useDispatch();
   const location = usePathname()
-  console.log(location.split('/')[3])
   const sidebarMenu = [
     {
       name: "Dashboard",
