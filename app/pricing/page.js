@@ -76,7 +76,7 @@ function page() {
   return (
     <div className=" font-poppins max-w-5xl mx-auto">
       <div className="flex flex-col items-center justify-center md:py-6 lg:py-8 xl:py-16 px-4 relative">
-        <Link href={"/hyper-price-plan"} className=" absolute top-7 right-4 rounded-md font-medium text-[15px] text-white bg-green-600">
+        <Link href={"/pricing/hyper-price-plan"} className=" absolute top-7 right-4 rounded-md font-medium text-[15px] text-white bg-green-600">
           <Button className={' cursor-pointer capitalize'}>View Lab Pricing</Button>
         </Link>
         <div className="text-center flex justify-between md:mb-6 sm:mb-4 mb-3 lg:mb-8">
@@ -169,7 +169,7 @@ function page() {
                                 />
                               </svg>
                             )}
-                          </div>
+                          </div >
                           <span className="text-[#ccc] leading-relaxed text-[14px] md:text-[15px] md:text-base">
                             {feature.text}
                           </span>

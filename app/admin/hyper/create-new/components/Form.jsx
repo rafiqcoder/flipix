@@ -5,7 +5,10 @@ import uploadImage from "@/public/images/upload.png";
 import Image from "next/image";
 import Button from "@/components/common/Button";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { createNewFlipixState } from "@/toolkit/slice";
 function Form() {
+  const dispath = useDispatch();
   // studio event types
   const eventTypes = [
     "Wedding",
@@ -40,7 +43,7 @@ function Form() {
 
   // form data states
   const [formData, setFormData] = useState({
-    jobNo: 0,
+    jobNo: '',
     clientName: "",
     functionType: "",
     functionDate: "",
@@ -53,7 +56,13 @@ function Form() {
   // form submit func
   const formSubmitFunc = (e) => {
     e.preventDefault();
+    dispath(createNewFlipixState(formData));
   };
+  const newFlipix = useSelector(state => state.createNewFlipixData)
+  useEffect(() => {
+      console.log(newFlipix)
+  }, [newFlipix])
+
   return (
     <form onSubmit={(e) => formSubmitFunc(e)} className=" w-full mt-4 lg:mt-6">
       {/* FRONT COVER */}
