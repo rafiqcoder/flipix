@@ -23,7 +23,7 @@ function page() {
               Select the version that best suits your needs
             </p>
           </div>
-          <div className=" max-w-3xl mx-auto md:mt-8 mt-5 lg:mt-12 grid grid-cols-1 lg:grid-cols-2 md:gap-8 gap-6 lg:gap-12 w-full">
+          <div className="px-3 max-w-3xl mx-auto md:mt-8 mt-5 lg:mt-12 grid grid-cols-1 lg:grid-cols-2 md:gap-8 gap-6 lg:gap-12 w-full">
             <Cards
               version={
                 <>
